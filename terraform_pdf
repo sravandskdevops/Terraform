@@ -5,6 +5,8 @@ sudo mv terraform /usr/local/bin/
 terraform version
 terraform init -upgrade
 ============================= ================================================================
+# terrafoem using to create EKS Cluster
+================================================
 # EKS Instal# eks-cluster.tf
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
@@ -188,6 +190,5 @@ module "vpc" {
     "kubernetes.io/role/internal-elb"              = "1"
   }
 }
-l using with Terraform
-==========================================
+
 
