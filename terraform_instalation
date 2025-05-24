@@ -1,3 +1,4 @@
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{  1  }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
 ##################### chatgpt  install terraform on ubuntu os ###################################
 sudo apt update
 sudo apt install -y curl unzip
