@@ -183,8 +183,20 @@ default = "noname"
 terraform validate , plan
 test  ,  prod
 terraform plan 
-############terraform output  user define variable ############
-vi main.tf  vi variable.tf  # take any default from docker
+############terraform output  user define variable ############ ok working 
+#Output the IP of the Container
+output "ip_address" {
+  value       = docker_container.mycontainer.ip_address
+  description = "The IP for the container."
+}
+
+#Output the Name of the Container
+output "container_name" {
+  value       = docker_container.mycontainer.name
+  description = "The name of the container."
+}
+############################################################################
+vi main.tf  vi variable.tf  # take any default from docker  {   no use }
 vi output.tf
 output "container_name" {
   value = docker_container.example.name
