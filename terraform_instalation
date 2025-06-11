@@ -6,10 +6,12 @@ curl -o terraform_0.13.1_linux_amd64.zip https://releases.hashicorp.com/terrafor
 sudo unzip terraform_0.13.1_linux_amd64.zip -d /usr/local/bin
 terraform version
 which terraform
-#############################################################   v 14  ###################################
+############################################################# ubuntu os  v 14  ###################################
+apt install -y curl unzip wget
 wget https://releases.hashicorp.com/terraform/0.14.11/terraform_0.14.11_linux_amd64.zip
 unzip terraform_0.14.11_linux_amd64.zip -d /usr/local/bin
-
+terraform version
+which terraform
 
 ###############################################################################################
 https://releases.hashicorp.com/terraform/0.13.1/terraform_0.13.1_linux_amd64.zip
