@@ -55,6 +55,10 @@ resource "docker_image" "ubuntu" {
 
 terraform 0.13upgrade .
 terraform init
+----------------------
+echo -n "hello" | sha256sum
+echo -n "hello!" | sha256sum
+------------------------------------------------------------
 main.tf  versions.tf 
 terraform validate
 terraform plan
