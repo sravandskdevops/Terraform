@@ -56,14 +56,39 @@ resource "docker_image" "ubuntu" {
 ~ 
 
 terraform 0.13upgrade .
-terraform init
+1. terraform init
 ----------------------
+cat .terraform.lock.hcl
+In Terraform, the terraform.lock.hcl file is a lock file automatically generated when you run commands like terraform init. Here's what it does:
+Purpose of terraform.lock.hcl:
+Locks provider versions: Ensures everyone using the code gets the same provider versions.
+Avoids unexpected changes: Prevents updates to provider plugins unless explicitly allowed (e.g., via terraform init -upgrade)..
+Ensures reproducibility: Helps maintain consistent infrastructure across teams and environments.
+----------------------------------------------------------------------------
+provider "registry.terraform.io/terraform-providers/docker" {
+  version = "2.7.2"
+  hashes = [
+    "h1:06EZRBUCgKAVbtw0tE2I0giBUcpgENy+NUUMM88+siY=",
+    "zh:23dfb4e5f3bcac95cb3fae489dd23caf8a433506198f56600a0e68982ebf5ea5",
+    ...
+  ]
+}
+----------------------------------------------------------------------------
+Provider: terraform-providers/docker This refers to the Docker provider for Terraform.
+Version: 2.7.2 You are locking this specific version of the Docker provider.
+Hashes:These are security hashes to verify the integrity of the provider. Terraform checks these to make sure the downloaded provider matches exactly — and hasn’t been tampered with.
+------------------------------------------------------------------------------
+Why This Is Important:-------------------------------
+It ensures everyone uses the same version of the provider.It helps avoid unexpected changes.
+It makes Terraform runs predictable and secure.
+You should commit this file to version control if working in a team.
+--------------------------------------------------------------------------------
 echo -n "hello" | sha256sum
 echo -n "hello!" | sha256sum
 ------------------------------------------------------------
-main.tf  versions.tf 
-terraform validate
-terraform plan
+2. main.tf 
+3. terraform validate
+4. terraform plan
  + this indicate create resource
  - this indicate resource deletion
 +/- indicate resource recreation
